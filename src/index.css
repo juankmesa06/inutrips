@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700;800&display=swap');
+/* Using a playful font as a fallback/alternative for Insaniburger if not locally available. 
+   Titan One is a good match for "Insaniburger" style (thick, rounded, display). */
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Mapping the display font. If Insaniburger is local, it would be defined in @font-face */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+  
+  body {
+    @apply font-body text-gray-800;
+  }
+}
+
+/* Fallback for Insaniburger using Titan One */
+.font-display {
+  font-family: 'Insaniburger', 'Titan One', cursive, sans-serif;
+}
