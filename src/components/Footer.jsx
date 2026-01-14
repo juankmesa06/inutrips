@@ -3,7 +3,7 @@ import { Facebook, Instagram, Youtube, Linkedin, Mail, Globe, MessageCircle } fr
 
 const Footer = () => {
     return (
-        <footer className="bg-secondary text-white py-12 border-t-8 border-primary">
+        <footer className="bg-[#1a1510] text-white py-12 border-t-8 border-primary">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
 
@@ -30,7 +30,6 @@ const Footer = () => {
                             <a href="#download" className="hover:text-primary transition-colors">Descargar App</a>
                         </div>
                         <div className="flex flex-col gap-4">
-                            <a href="mailto:soporte@inutrips.com" className="hover:text-primary transition-colors">Contáctenos</a>
                             <a href="/terminos_condiciones.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Términos y Condiciones</a>
                         </div>
                     </div>
