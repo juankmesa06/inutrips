@@ -26,6 +26,7 @@ const Footer = () => {
                         <div className="flex flex-col gap-4">
                             <a href="#drivers" className="hover:text-primary transition-colors">Conductores</a>
                             <a href="#passengers" className="hover:text-primary transition-colors">Pasajeros</a>
+                            <a href="#register" className="hover:text-primary transition-colors">Registro / Beneficios</a>
                             <a href="#download" className="hover:text-primary transition-colors">Descargar App</a>
                         </div>
                         <div className="flex flex-col gap-4">

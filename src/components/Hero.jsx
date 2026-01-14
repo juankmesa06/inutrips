@@ -42,6 +42,20 @@ const Hero = () => {
                     Donde la empatía y el cuidado se encuentran en cada viaje.
                 </motion.p>
 
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    className="mb-12"
+                >
+                    <a
+                        href="#register"
+                        className="bg-secondary text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-opacity-90 transition-all hover:scale-105 inline-flex items-center gap-3"
+                    >
+                        🎁 Reclamar mis beneficios
+                    </a>
+                </motion.div>
+
                 {/* Hero Banner Image */}
                 <motion.div
                     className="w-full max-w-5xl mb-12 relative"

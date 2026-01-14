@@ -23,9 +23,9 @@ const Navbar = () => {
 
     // Resetting navLinks based on exact request: "quitar descargar... agregar un item que se llama pasajero"
     const finalNavLinks = [
-        { name: 'Pasajero', href: '#services' }, // Assuming Pasajero leads to general info for now
+        { name: 'Pasajero', href: '#passengers' }, // Pointing to the passengers section
         { name: 'Conductores', href: '#drivers' },
-        { name: 'Servicios', href: '#services' },
+        { name: 'Registro', href: '#register' },
     ];
 
     return (
@@ -75,7 +75,7 @@ const Navbar = () => {
                             transition={{ type: "tween", duration: 0.3 }}
                             className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 md:hidden"
                         >
-                            {navLinks.map((link) => (
+                            {finalNavLinks.map((link) => (
                                 <a
                                     key={link.name}
                                     href={link.href}

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeatureCard from './components/FeatureCard';
 import Footer from './components/Footer';
+import LeadCapture from './components/LeadCapture';
 import { Shield, Heart, Clock, Car, MessageCircle, Apple } from 'lucide-react';
 
 function App() {
@@ -250,6 +251,8 @@ function App() {
                         </div>
                     </div>
                 </section>
+
+                <LeadCapture />
 
                 {/* Revised Call to Action / App Download - DUAL SECTION */}
                 <section className="py-24 relative overflow-hidden bg-primary" id="download">
