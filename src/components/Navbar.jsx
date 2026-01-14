@@ -30,13 +30,13 @@ const Navbar = () => {
 
     return (
         <nav
-            className="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm py-4"
+            className="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm py-3 md:py-4"
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
                 {/* Logo */}
-                <a href="#" className="flex items-center gap-3 z-50 group">
-                    <img src="/logo.png" alt="InuTrips" className="h-12 w-auto group-hover:scale-105 transition-transform duration-300" />
-                    <span className="font-display text-2xl tracking-wide font-bold">
+                <a href="#" className="flex items-center gap-2 md:gap-3 z-50 group">
+                    <img src="/logo.png" alt="InuTrips" className="h-8 sm:h-10 md:h-12 w-auto group-hover:scale-105 transition-transform duration-300" />
+                    <span className="font-display text-lg sm:text-xl md:text-2xl tracking-wide font-bold whitespace-nowrap">
                         <span className="text-primary">INU</span> <span className="text-secondary">Trips</span>
                     </span>
                 </a>

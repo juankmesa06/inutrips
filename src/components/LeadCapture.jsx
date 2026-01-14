@@ -63,14 +63,14 @@ const LeadCapture = () => {
                 <div className="max-w-4xl mx-auto bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row">
 
                     {/* Left: Info Side */}
-                    <div className="md:w-1/2 bg-primary p-10 md:p-16 flex flex-col justify-center text-secondary">
-                        <span className="inline-block px-3 py-1 bg-secondary/10 rounded-full text-xs font-bold tracking-widest uppercase mb-6">
+                    <div className="md:w-1/2 bg-primary p-8 sm:p-10 md:p-16 flex flex-col justify-center text-secondary">
+                        <span className="inline-block px-3 py-1 bg-secondary/10 rounded-full text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 md:mb-6 self-start">
                             Exclusivo InuTrips
                         </span>
-                        <h2 className="text-4xl font-display mb-6 leading-tight">
+                        <h2 className="text-3xl sm:text-4xl font-display mb-6 md:mb-8 leading-[1.15]">
                             ¡Regístrate y recibe <span className="underline decoration-secondary/30">beneficios</span> exclusivos!
                         </h2>
-                        <ul className="space-y-4 mb-8 text-secondary/80 font-medium">
+                        <ul className="space-y-4 mb-4 md:mb-8 text-secondary/80 font-medium text-sm md:text-base">
                             <li className="flex items-center gap-3">
                                 <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
                                     <CheckCircle size={14} />
@@ -93,20 +93,20 @@ const LeadCapture = () => {
                     </div>
 
                     {/* Right: Form Side */}
-                    <div className="md:w-1/2 p-10 md:p-16 flex flex-col justify-center bg-white">
+                    <div className="md:w-1/2 p-8 sm:p-10 md:p-16 flex flex-col justify-center bg-white">
                         <AnimatePresence mode="wait">
                             {status === 'success' ? (
                                 <motion.div
                                     key="success"
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    className="text-center"
+                                    className="text-center py-4 md:py-0"
                                 >
-                                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
-                                        <CheckCircle size={40} />
+                                    <div className="w-16 h-16 md:w-20 md:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
+                                        <CheckCircle size={32} className="md:w-10 md:h-10" />
                                     </div>
-                                    <h3 className="text-2xl font-display text-secondary mb-4">¡Registro Exitoso!</h3>
-                                    <p className="text-gray-500 mb-8">Un asesor InuTrips te contactará pronto por WhatsApp.</p>
+                                    <h3 className="text-2xl font-display text-secondary mb-3 md:mb-4">¡Registro Exitoso!</h3>
+                                    <p className="text-sm md:text-base text-gray-500 mb-6 md:mb-8">Un asesor InuTrips te contactará pronto por WhatsApp.</p>
                                     <button
                                         onClick={() => setStatus('idle')}
                                         className="text-primary font-bold hover:underline"

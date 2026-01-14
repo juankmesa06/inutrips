@@ -53,14 +53,14 @@ function App() {
                     </div>
 
                     <div className="container mx-auto px-4 relative z-10">
-                        <div className="flex flex-col items-center text-center mb-20 max-w-4xl mx-auto">
+                        <div className="flex flex-col items-center text-center mb-12 md:mb-20 max-w-4xl mx-auto">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 className="mb-6"
                             >
-                                <span className="bg-secondary/10 backdrop-blur-sm border border-secondary/20 text-secondary px-6 py-2 rounded-full text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                                <span className="bg-secondary/10 backdrop-blur-sm border border-secondary/20 text-secondary px-5 py-2 rounded-full text-xs md:text-sm font-extrabold tracking-widest uppercase shadow-sm">
                                     Nuestros Servicios
                                 </span>
                             </motion.div>
@@ -70,12 +70,12 @@ function App() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-5xl md:text-7xl font-display text-secondary mb-8 font-bold leading-tight relative text-center"
+                                className="text-4xl sm:text-5xl md:text-7xl font-display text-secondary mb-6 md:mb-8 font-bold leading-[1.1] relative text-center"
                             >
                                 <span className="relative z-10">Más que un</span>
                                 <span className="block mt-2 text-white drop-shadow-md transform -rotate-1 origin-center">simple viaje</span>
-                                {/* Creative underline decoration */}
-                                <svg className="absolute w-full h-4 -bottom-2 left-0 text-white/40 z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                {/* Creative underline decoration - hidden on very small screens if needed, otherwise fluid */}
+                                <svg className="absolute w-full h-3 md:h-4 -bottom-1 md:-bottom-2 left-0 text-white/40 z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
                                     <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="3" fill="none" />
                                 </svg>
                             </motion.h2>
@@ -85,9 +85,9 @@ function App() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="text-secondary/90 text-2xl md:text-3xl font-medium leading-relaxed font-display max-w-2xl mx-auto"
+                                className="text-xl md:text-3xl font-medium leading-relaxed font-display max-w-2xl mx-auto text-secondary/90 px-4"
                             >
-                                Diseñado exclusivamente para el <span className="underline decoration-white/50 decoration-4 underline-offset-4">bienestar de tu mascota</span> y tu tranquilidad.
+                                Diseñado exclusivamente para el <span className="underline decoration-white/50 decoration-2 md:decoration-4 underline-offset-4">bienestar de tu mascota</span> y tu tranquilidad.
                             </motion.p>
                         </div>
 
@@ -177,10 +177,10 @@ function App() {
 
                             <div className="md:w-1/2">
                                 <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Únete al equipo</span>
-                                <h2 className="text-4xl md:text-5xl font-display text-secondary mb-6 leading-tight">
-                                    Conviértete en <br />Conductor Inu
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-secondary mb-6 leading-tight">
+                                    Conviértete en <br className="hidden sm:block" />Conductor Inu
                                 </h2>
-                                <p className="text-lg text-gray-600 mb-10 leading-relaxed font-light">
+                                <p className="text-base md:text-lg text-gray-600 mb-10 leading-relaxed font-light">
                                     Gana dinero extra haciendo lo que amas. Si tienes vehículo propio y pasión por los animales, ¡te estamos buscando!
                                 </p>
 
@@ -271,12 +271,12 @@ function App() {
                                     <span className="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest uppercase mb-4 text-white">
                                         Para Pasajeros
                                     </span>
-                                    <h2 className="text-3xl md:text-4xl font-display mb-4 leading-tight text-white">
+                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-display mb-4 leading-tight text-white">
                                         Viaja <span className="text-primary">seguro</span> con tu mejor amigo
                                     </h2>
-                                    <p className="text-lg text-white/80 mb-6">
-                                        Descarga InuTrips y disfruta de la movilidad que tu mascota merece. <br />
-                                        <span className="text-primary font-bold text-xl block mt-2">¡Tu primer viaje tiene 20% OFF!</span>
+                                    <p className="text-base md:text-lg text-white/80 mb-6">
+                                        Descarga InuTrips y disfruta de la movilidad que tu mascota merece. <br className="hidden sm:block" />
+                                        <span className="text-primary font-bold text-lg md:text-xl block mt-2">¡Tu primer viaje tiene 20% OFF!</span>
                                     </p>
 
                                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -308,12 +308,12 @@ function App() {
                                     <span className="inline-block py-1 px-3 rounded-full bg-primary/20 border border-primary/40 text-xs font-bold tracking-widest uppercase mb-4 text-primary">
                                         Para Conductores
                                     </span>
-                                    <h2 className="text-3xl md:text-4xl font-display mb-4 leading-tight text-white">
+                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-display mb-4 leading-tight text-white">
                                         Genera ingresos <span className="text-primary">extra</span>
                                     </h2>
-                                    <p className="text-lg text-white/80 mb-6">
-                                        Únete al equipo de conductores amantes de las mascotas. <br />
-                                        <span className="text-white bg-white/10 px-2 py-1 rounded inline-block mt-2 font-medium">
+                                    <p className="text-base md:text-lg text-white/80 mb-6">
+                                        Únete al equipo de conductores amantes de las mascotas. <br className="hidden sm:block" />
+                                        <span className="text-white bg-white/10 px-2 py-1 rounded inline-block mt-2 font-medium text-sm md:text-base">
                                             🎁 <span className="text-primary font-bold">¡Recibe $10.000 de regalo</span> en tu primera recarga!
                                         </span>
                                     </p>
