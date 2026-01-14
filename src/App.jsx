@@ -252,7 +252,7 @@ function App() {
                     </div>
                 </section>
 
-                <LeadCapture />
+
 
                 {/* Revised Call to Action / App Download - DUAL SECTION */}
                 <section className="py-24 relative overflow-hidden bg-primary" id="download">
@@ -346,6 +346,8 @@ function App() {
                         </div>
                     </div>
                 </section>
+
+                <LeadCapture />
 
                 {/* Floating WhatsApp Button */}
                 <a
