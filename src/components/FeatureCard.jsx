@@ -9,10 +9,14 @@ const FeatureCard = ({ icon: Icon, title, description, color }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             whileHover={{ y: -5 }}
-            className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center group"
+            className="bg-white p-8 rounded-[2rem] shadow-xl hover:shadow-orange-500/20 transition-all duration-500 border-2 border-transparent hover:border-primary/50 flex flex-col items-center text-center group h-full relative overflow-visible"
         >
-            <div className={`p-4 rounded-2xl mb-6 ${color} bg-opacity-20 group-hover:bg-opacity-30 transition-colors`}>
-                <Icon size={40} className={`text-${color.split('-')[1]}-600`} strokeWidth={1.5} />
+            {/* Creative Icon Container with 'Blob' effect */}
+            <div className="relative mb-8 group-hover:scale-110 transition-transform duration-500">
+                <div className={`absolute inset-0 ${color} opacity-20 blur-xl rounded-full transform translate-y-2 group-hover:translate-y-4 transition-transform duration-500`}></div>
+                <div className={`relative w-20 h-20 flex items-center justify-center rounded-2xl ${color.replace('text', 'bg').replace('600', '100')} ${color} shadow-lg ring-4 ring-white`}>
+                    <Icon size={40} className="transform -rotate-6 group-hover:rotate-0 transition-all duration-500" strokeWidth={2} />
+                </div>
             </div>
 
             <h3 className="text-xl font-bold text-secondary mb-3 font-display">

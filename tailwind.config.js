@@ -11,10 +11,9 @@ export default {
                 secondary: '#675544', // Buffalo Dance
             },
             fontFamily: {
-                display: ['Insaniburger', 'cursive', 'sans-serif'],
+                display: ['Nunito', 'sans-serif'], // Changed to Nunito as requested
                 body: ['Nunito', 'sans-serif'],
             },
         },
     },
-    plugins: [],
 }
