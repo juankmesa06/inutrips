@@ -10,8 +10,8 @@ const LeadCapture = () => {
         role: 'pasajero'
     });
 
-    // NOTE: The user should provide their n8n webhook URL here
-    const N8N_WEBHOOK_URL = '';
+    // URL oficial de n8n para captura de leads
+    const N8N_WEBHOOK_URL = 'https://kmilo8807.app.n8n.cloud/webhook/lead-capture';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -182,14 +182,6 @@ const LeadCapture = () => {
                                             </div>
                                         )}
 
-                                        {!N8N_WEBHOOK_URL && (
-                                            <div className="mt-8 p-4 bg-yellow-50 rounded-xl border border-yellow-100 flex items-start gap-3">
-                                                <AlertCircle className="text-yellow-600 mt-1" size={18} />
-                                                <p className="text-xs text-yellow-800 leading-normal">
-                                                    <strong>Recordatorio:</strong> Falta configurar la URL de n8n en el código. Los datos se mostrarán solo en consola.
-                                                </p>
-                                            </div>
-                                        )}
                                     </form>
                                 </motion.div>
                             )}
