@@ -6,7 +6,7 @@ const LeadCapture = () => {
     const [status, setStatus] = useState('idle'); // idle, loading, success, error
     const [formData, setFormData] = useState({
         name: '',
-        whatsapp: '',
+        email: '',
         role: 'pasajero'
     });
 
@@ -16,7 +16,7 @@ const LeadCapture = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!formData.name || !formData.whatsapp) {
+        if (!formData.name || !formData.email) {
             alert('Por favor completa todos los campos.');
             return;
         }
@@ -106,12 +106,12 @@ const LeadCapture = () => {
                                         <CheckCircle size={32} className="md:w-10 md:h-10" />
                                     </div>
                                     <h3 className="text-2xl font-display text-secondary mb-3 md:mb-4">¡Registro Exitoso!</h3>
-                                    <p className="text-sm md:text-base text-gray-500 mb-6 md:mb-8">Un asesor InuTrips te contactará pronto por WhatsApp.</p>
+                                    <p className="text-sm md:text-base text-gray-500 mb-6 md:mb-8">Te contactaremos pronto por correo electrónico con tus beneficios.</p>
                                     <button
                                         onClick={() => setStatus('idle')}
                                         className="text-primary font-bold hover:underline"
                                     >
-                                        Registrar otro número
+                                        Registrar otro correo
                                     </button>
                                 </motion.div>
                             ) : (
@@ -135,14 +135,14 @@ const LeadCapture = () => {
                                             />
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">WhatsApp / Celular</label>
+                                            <label className="block text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Correo Electrónico</label>
                                             <input
-                                                type="tel"
+                                                type="email"
                                                 required
-                                                placeholder="Ej: 316 123 4567"
+                                                placeholder="Ej: juan@ejemplo.com"
                                                 className="w-full px-5 py-3 rounded-xl border border-gray-100 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-                                                value={formData.whatsapp}
-                                                onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
+                                                value={formData.email}
+                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             />
                                         </div>
                                         <div>
