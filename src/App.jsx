@@ -138,7 +138,7 @@ function App() {
                                 {/* Passenger Download Buttons */}
                                 <div className="mt-10">
                                     <p className="text-sm text-gray-400 font-bold uppercase tracking-wider mb-4">Empieza ahora:</p>
-                                    <div className="flex flex-col sm:flex-row gap-4">
+                                    <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
                                         <a href="https://apps.apple.com/co/app/inutrips/id6450268527" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-gray-800 transition-all shadow-lg hover:-translate-y-1 w-40 justify-center">
                                             {/* Apple Logo SVG */}
                                             <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -206,7 +206,7 @@ function App() {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                                <div className="flex flex-col sm:flex-row gap-4 mt-8 items-center md:items-start">
                                     <a href="https://apps.apple.com/co/app/inutrips-drive/id6748416907" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-opacity-90 transition-all shadow-lg hover:-translate-y-1 w-40 justify-center">
                                         {/* Apple Logo SVG */}
                                         <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -279,7 +279,7 @@ function App() {
                                         <span className="text-primary font-bold text-lg md:text-xl block mt-2">¡Tu primer viaje tiene 20% OFF!</span>
                                     </p>
 
-                                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center md:items-start">
                                         <a href="https://apps.apple.com/co/app/inutrips/id6450268527" target="_blank" rel="noopener noreferrer" className="bg-white text-secondary px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-gray-100 transition-all shadow-lg hover:scale-105 group w-40 justify-center">
                                             {/* Apple Logo SVG */}
                                             <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -318,7 +318,7 @@ function App() {
                                         </span>
                                     </p>
 
-                                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                                    <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center md:items-start">
                                         <a href="https://apps.apple.com/co/app/inutrips-drive/id6748416907" target="_blank" rel="noopener noreferrer" className="bg-white text-secondary px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-gray-100 transition-all shadow-lg hover:scale-105 group w-40 justify-center">
                                             {/* Apple Logo SVG */}
                                             <svg viewBox="0 0 384 512" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
