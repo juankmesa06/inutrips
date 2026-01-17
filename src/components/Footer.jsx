@@ -24,8 +24,8 @@ const Footer = () => {
                     {/* Quick Links */}
                     <div className="flex gap-12 text-base font-semibold">
                         <div className="flex flex-col gap-4">
-                            <a href="#drivers" className="hover:text-primary transition-colors">Conductores</a>
-                            <a href="#passengers" className="hover:text-primary transition-colors">Pasajeros</a>
+                            <a href="#drivers" className="hover:text-primary transition-colors">Conductor</a>
+                            <a href="#passengers" className="hover:text-primary transition-colors">Pasajero</a>
 
                             <a href="#download" className="hover:text-primary transition-colors">Descargar App</a>
                         </div>

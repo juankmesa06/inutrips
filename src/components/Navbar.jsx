@@ -62,7 +62,7 @@ const Navbar = () => {
                     className="md:hidden z-50 text-secondary"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
-                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} className={isScrolled ? 'text-secondary' : 'text-white'} />}
+                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} className="text-secondary" />}
                 </button>
 
                 {/* Mobile Menu Overlay */}

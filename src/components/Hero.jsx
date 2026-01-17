@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className="relative min-h-[600px] flex items-center justify-center overflow-hidden bg-white pt-24 pb-12">
+        <div className="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center overflow-hidden bg-white pt-24 pb-12">
             {/* Decorative Background Elements */}
             <div className="absolute top-0 right-0 w-full h-full overflow-hidden z-0 pointer-events-none">
                 <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl text-primary/5 font-display text-9xl flex items-center justify-center select-none">
@@ -25,7 +25,7 @@ const Hero = () => {
                 </motion.div>
 
                 <motion.h1
-                    className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-secondary font-display mb-4 tracking-tight leading-[1.1]"
+                    className="text-3xl sm:text-6xl md:text-7xl lg:text-8xl text-secondary font-display mb-4 tracking-tight leading-[1.1]"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}

@@ -43,7 +43,7 @@ function App() {
                 <Hero />
 
                 {/* Services Section - Creative Yellow Theme */}
-                <section className="py-24 relative overflow-hidden" id="services">
+                <section className="py-16 md:py-24 relative overflow-hidden" id="services">
                     {/* Yellow Background with Creative Pattern - Using Brand PRIMARY */}
                     <div className="absolute inset-0 bg-primary"> {/* Official Brand Yellow */}
                         <div className="absolute inset-0 opacity-10" style={{
@@ -70,7 +70,7 @@ function App() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-4xl sm:text-5xl md:text-7xl font-display text-secondary mb-6 md:mb-8 font-bold leading-[1.1] relative text-center"
+                                className="text-3xl sm:text-5xl md:text-7xl font-display text-secondary mb-6 md:mb-8 font-bold leading-[1.1] relative text-center"
                             >
                                 <span className="relative z-10">Más que un</span>
                                 <span className="block mt-2 text-white drop-shadow-md transform -rotate-1 origin-center">simple viaje</span>
@@ -103,9 +103,9 @@ function App() {
                 </section>
 
                 {/* How It Works Section */}
-                <section className="py-20 bg-gray-50 overflow-hidden" id="passengers">
+                <section className="py-16 md:py-20 bg-gray-50 overflow-hidden" id="passengers">
                     <div className="container mx-auto px-4">
-                        <div className="flex flex-col md:flex-row items-center gap-16">
+                        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
                             <div className="md:w-1/2 relative">
                                 <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-50"></div>
                                 <img
@@ -167,13 +167,13 @@ function App() {
                 </section>
 
                 {/* Driver Section */}
-                <section className="py-24 bg-gray-50 relative overflow-hidden" id="drivers">
+                <section className="py-16 md:py-24 bg-gray-50 relative overflow-hidden" id="drivers">
                     {/* Decorative Elements */}
                     <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 rounded-full blur-2xl translate-y-1/3 -translate-x-1/4"></div>
 
                     <div className="container mx-auto px-4 relative z-10">
-                        <div className="flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-24">
+                        <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-12 lg:gap-24">
 
                             <div className="md:w-1/2">
                                 <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Únete al equipo</span>
@@ -255,7 +255,7 @@ function App() {
 
 
                 {/* Revised Call to Action / App Download - DUAL SECTION */}
-                <section className="py-24 relative overflow-hidden bg-primary" id="download">
+                <section className="py-16 md:py-24 relative overflow-hidden bg-primary" id="download">
                     <div className="container mx-auto px-4">
                         <div className="bg-secondary rounded-[3rem] p-8 md:p-12 shadow-2xl relative overflow-hidden ring-8 ring-white/20">
 

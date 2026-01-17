@@ -161,7 +161,7 @@ const LeadCapture = () => {
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="col-span-1">
-                                            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Nombre</label>
+                                            <label className="block text-xs font-bold text-secondary uppercase tracking-widest mb-2">Nombre</label>
                                             <input
                                                 type="text"
                                                 required
@@ -172,7 +172,7 @@ const LeadCapture = () => {
                                             />
                                         </div>
                                         <div className="col-span-1">
-                                            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Rol</label>
+                                            <label className="block text-xs font-bold text-secondary uppercase tracking-widest mb-2">Rol</label>
                                             <div className="relative">
                                                 <select
                                                     className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-primary focus:bg-white focus:ring-0 transition-all font-medium text-secondary appearance-none cursor-pointer"
@@ -191,7 +191,7 @@ const LeadCapture = () => {
                                     </div>
 
                                     <div>
-                                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Correo Electrónico</label>
+                                        <label className="block text-xs font-bold text-secondary uppercase tracking-widest mb-2">Correo Electrónico</label>
                                         <input
                                             type="email"
                                             required
@@ -203,7 +203,7 @@ const LeadCapture = () => {
                                     </div>
 
                                     <div>
-                                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Mensaje</label>
+                                        <label className="block text-xs font-bold text-secondary uppercase tracking-widest mb-2">Mensaje</label>
                                         <textarea
                                             required
                                             rows="4"
