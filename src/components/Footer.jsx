@@ -17,7 +17,7 @@ const Footer = () => {
                             Conectando corazones peludos con sus destinos favoritos. Viajes seguros y felices para todos.
                         </p>
                         <div className="text-white/50 text-sm uppercase tracking-wide">
-                            Medellín, Antioquia, Colombia 🇨🇴
+                            Medellín, Antioquia, Colombia
                         </div>
                     </div>
 
@@ -26,11 +26,12 @@ const Footer = () => {
                         <div className="flex flex-col gap-4">
                             <a href="#drivers" className="hover:text-primary transition-colors">Conductores</a>
                             <a href="#passengers" className="hover:text-primary transition-colors">Pasajeros</a>
-                            <a href="#register" className="hover:text-primary transition-colors">Registro / Beneficios</a>
+
                             <a href="#download" className="hover:text-primary transition-colors">Descargar App</a>
                         </div>
                         <div className="flex flex-col gap-4">
                             <a href="/terminos_condiciones.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Términos y Condiciones</a>
+                            <a href="/politicas_privacidad.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Políticas de Privacidad</a>
                         </div>
                     </div>
 
@@ -75,16 +76,13 @@ const Footer = () => {
                             <a href="mailto:soporte@inutrips.com" className="bg-white/10 p-3 rounded-xl hover:bg-primary hover:text-secondary transition-all duration-300 flex items-center justify-center group" title="Soporte">
                                 <Mail size={24} />
                             </a>
-                            {/* Web */}
-                            <a href="https://inutrips.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-xl hover:bg-primary hover:text-secondary transition-all duration-300 flex items-center justify-center group" title="Sitio Web">
-                                <Globe size={24} />
-                            </a>
+
                         </div>
                     </div>
                 </div>
 
                 <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/50 font-light">
-                    © {new Date().getFullYear()} Arime Software S.A. Todos los derechos reservados.
+                    © {new Date().getFullYear()} Arime Software. Todos los derechos reservados.
                 </div>
             </div>
         </footer>

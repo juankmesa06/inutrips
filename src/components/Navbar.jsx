@@ -16,7 +16,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'Pasajero', href: '#services' }, // Replaced Servicos/added Pasajero as requested, pointing to services/features
-        { name: 'Conductores', href: '#drivers' },
+        { name: 'Conductor', href: '#drivers' },
         { name: 'Servicios', href: '#services' }, // Keeping services as it's useful? User said "agregar un item que se llama pasajero". I'll keep both or check context. User said "agregar" (add), not replace.
     ];
     // User asked to REMOVE "Descargar" (link) and update "Descargar App" (button).
@@ -24,8 +24,8 @@ const Navbar = () => {
     // Resetting navLinks based on exact request: "quitar descargar... agregar un item que se llama pasajero"
     const finalNavLinks = [
         { name: 'Pasajero', href: '#passengers' }, // Pointing to the passengers section
-        { name: 'Conductores', href: '#drivers' },
-        { name: 'Registro', href: '#register' },
+        { name: 'Conductor', href: '#drivers' },
+
     ];
 
     return (

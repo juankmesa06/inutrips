@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, CheckCircle, AlertCircle, Loader2, Sparkles, Star, PawPrint } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2, Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
 
 const LeadCapture = () => {
     const [status, setStatus] = useState('idle'); // idle, loading, success, error
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        role: 'pasajero'
+        role: 'pasajero',
+        message: ''
     });
 
     // URL oficial de n8n para captura de leads
@@ -16,7 +17,7 @@ const LeadCapture = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!formData.name || !formData.email) {
+        if (!formData.name || !formData.email || !formData.message) {
             alert('Por favor completa todos los campos.');
             return;
         }
@@ -29,7 +30,7 @@ const LeadCapture = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     ...formData,
-                    source: 'Landing Page InuTrips',
+                    source: 'Landing Page InuTrips - Contacto',
                     date: new Date().toISOString()
                 })
             });
@@ -40,229 +41,206 @@ const LeadCapture = () => {
                 throw new Error('Failed to send lead');
             }
         } catch (error) {
-            console.error('Error sending lead to n8n:', error);
+            console.error('Error sending data to n8n:', error);
             setStatus('error');
         }
     };
 
-    const containerVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.8,
-                staggerChildren: 0.1
-            }
-        }
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
     };
-
-    const itemVariants = {
-        hidden: { opacity: 0, x: -20 },
-        visible: { opacity: 1, x: 0 }
-    };
-
-    const floatingIcons = [
-        { icon: PawPrint, top: '10%', left: '5%', delay: 0 },
-        { icon: Star, top: '20%', right: '8%', delay: 1 },
-        { icon: Sparkles, bottom: '15%', left: '10%', delay: 0.5 },
-        { icon: Star, bottom: '10%', right: '5%', delay: 1.5 },
-    ];
 
     return (
-        <section id="register" className="py-24 bg-secondary relative overflow-hidden">
-            {/* Animated Background Icons */}
-            {floatingIcons.map((item, index) => (
-                <motion.div
-                    key={index}
-                    className="absolute text-primary/10 pointer-events-none hidden md:block"
-                    style={{ top: item.top, left: item.left, right: item.right, bottom: item.bottom }}
-                    animate={{
-                        y: [0, -20, 0],
-                        opacity: [0.1, 0.2, 0.1],
-                        rotate: [0, 10, -10, 0]
-                    }}
-                    transition={{
-                        duration: 4,
-                        delay: item.delay,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                >
-                    <item.icon size={120} />
-                </motion.div>
-            ))}
+        <section id="contact" className="py-20 lg:py-24 bg-gray-50 relative overflow-hidden">
+            {/* Subtle Background Pattern */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
+                backgroundImage: `radial-gradient(#1e293b 1px, transparent 1px)`,
+                backgroundSize: '32px 32px'
+            }}></div>
 
-            {/* Background blur elements */}
-            <div className="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+            <div className="container mx-auto px-4 relative z-10 max-w-6xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-            <div className="container mx-auto px-4 relative z-10">
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="max-w-4xl mx-auto bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row border border-white/20 backdrop-blur-sm"
-                >
-
-                    {/* Left: Info Side */}
-                    <div className="md:w-1/2 bg-primary p-8 sm:p-10 md:p-16 flex flex-col justify-center text-secondary relative overflow-hidden">
-                        {/* Decorative Circle */}
-                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/10 rounded-full blur-2xl"></div>
-
+                    {/* Left Column: Contact Info */}
+                    <div className="pt-4 lg:pt-10">
                         <motion.span
-                            variants={itemVariants}
-                            className="inline-block px-3 py-1 bg-secondary/10 rounded-full text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 md:mb-6 self-start relative z-10"
-                            animate={{ scale: [1, 1.05, 1] }}
-                            transition={{ duration: 2, repeat: Infinity }}
+                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                            className="inline-block px-4 py-1.5 bg-secondary/10 text-secondary rounded-full text-xs font-bold tracking-widest uppercase mb-6"
                         >
-                            🚀 Exclusivo InuTrips
+                            Soporte InuTrips
                         </motion.span>
 
-                        <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl font-display mb-6 md:mb-8 leading-[1.15] relative z-10">
-                            ¡Regístrate y recibe <span className="underline decoration-secondary/30 decoration-thickness-2">beneficios</span> únicos!
+                        <motion.h2
+                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                            className="text-4xl md:text-5xl font-display text-secondary mb-6 leading-tight"
+                        >
+                            <span className="text-secondary">Contáctanos</span>
                         </motion.h2>
 
-                        <ul className="space-y-4 mb-4 md:mb-8 text-secondary/80 font-medium text-sm md:text-base relative z-10">
-                            {[
-                                "Bono de $10.000 (Conductores)",
-                                "20% OFF primer viaje (Pasajeros)",
-                                "Acceso previo a nuevas funciones"
-                            ].map((text, i) => (
-                                <motion.li
-                                    key={i}
-                                    variants={itemVariants}
-                                    className="flex items-center gap-3"
-                                >
-                                    <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center text-secondary flex-shrink-0">
-                                        <CheckCircle size={14} />
-                                    </div>
-                                    {text}
-                                </motion.li>
-                            ))}
-                        </ul>
+                        <motion.p
+                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                            className="text-lg text-gray-600 mb-12 leading-relaxed max-w-md"
+                        >
+                            Estamos aquí para ayudarte. Si tienes preguntas sobre viajes, beneficios o la app, escríbenos.
+                        </motion.p>
+
+                        <div className="space-y-8">
+                            <motion.div
+                                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                                className="flex items-start gap-5"
+                            >
+                                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary border border-gray-100 shrink-0">
+                                    <Mail size={24} />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-secondary text-lg mb-1">Correo Electrónico</h3>
+                                    <p className="text-gray-500 mb-1">Nuestro canal oficial de soporte.</p>
+                                    <a href="mailto:soporte@inutrips.com" className="text-primary font-bold hover:underline">soporte@inutrips.com</a>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                                className="flex items-start gap-5"
+                            >
+                                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary border border-gray-100 shrink-0">
+                                    <Phone size={24} />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-secondary text-lg mb-1">Línea de Atención</h3>
+                                    <p className="text-gray-500 mb-1">Escríbenos a nuestro WhatsApp.</p>
+                                    <a href="https://wa.me/573161034386" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">+57 316 103 4386</a>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                                className="flex items-start gap-5"
+                            >
+                                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary border border-gray-100 shrink-0">
+                                    <MapPin size={24} />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-secondary text-lg mb-1">Ubicación</h3>
+                                    <p className="text-gray-500">Medellín, Colombia</p>
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
 
-                    {/* Right: Form Side */}
-                    <div className="md:w-1/2 p-8 sm:p-10 md:p-16 flex flex-col justify-center bg-white relative">
+                    {/* Right Column: Professional Form */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="bg-white p-8 md:p-10 rounded-[2rem] shadow-xl border border-gray-100"
+                    >
                         <AnimatePresence mode="wait">
                             {status === 'success' ? (
                                 <motion.div
                                     key="success"
-                                    initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
-                                    animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                                    className="text-center py-4 md:py-0"
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="text-center py-12"
                                 >
-                                    <motion.div
-                                        initial={{ scale: 0 }}
-                                        animate={{ scale: 1 }}
-                                        transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                                        className="w-16 h-16 md:w-20 md:h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 shadow-inner"
-                                    >
-                                        <CheckCircle size={32} className="md:w-10 md:h-10" />
-                                    </motion.div>
-                                    <h3 className="text-2xl font-display text-secondary mb-3 md:mb-4">¡Registro Exitoso!</h3>
-                                    <p className="text-sm md:text-base text-gray-500 mb-6 md:mb-8 italic">"Prepárate para viajar como nunca antes"</p>
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
+                                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
+                                        <CheckCircle size={40} />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-secondary mb-3">¡Mensaje Recibido!</h3>
+                                    <p className="text-gray-500 mb-8">Gracias por contactarnos. Nuestro equipo te responderá a la brevedad.</p>
+                                    <button
                                         onClick={() => setStatus('idle')}
-                                        className="text-primary font-bold hover:underline flex items-center gap-2 mx-auto"
+                                        className="text-primary font-bold hover:underline"
                                     >
-                                        Registrar otro correo <Sparkles size={16} />
-                                    </motion.button>
+                                        Enviar otro mensaje
+                                    </button>
                                 </motion.div>
                             ) : (
-                                <motion.div
-                                    key="form"
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -20 }}
-                                >
-                                    <h3 className="text-2xl font-display text-secondary mb-8">Déjanos tus datos</h3>
-                                    <form onSubmit={handleSubmit} className="space-y-6">
-                                        <motion.div variants={itemVariants}>
-                                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5 ml-1">Nombre completo</label>
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div className="col-span-1">
+                                            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Nombre</label>
                                             <input
                                                 type="text"
                                                 required
-                                                placeholder="Ej: Juan Pérez"
-                                                className="w-full px-5 py-3.5 rounded-2xl border border-gray-100 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all shadow-sm"
+                                                className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-primary focus:bg-white focus:ring-0 transition-all font-medium text-secondary"
+                                                placeholder="Tu nombre"
                                                 value={formData.name}
                                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             />
-                                        </motion.div>
-                                        <motion.div variants={itemVariants}>
-                                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5 ml-1">Correo Electrónico</label>
-                                            <input
-                                                type="email"
-                                                required
-                                                placeholder="Ej: juan@ejemplo.com"
-                                                className="w-full px-5 py-3.5 rounded-2xl border border-gray-100 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all shadow-sm"
-                                                value={formData.email}
-                                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            />
-                                        </motion.div>
-                                        <motion.div variants={itemVariants}>
-                                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1.5 ml-1">Me interesa como...</label>
+                                        </div>
+                                        <div className="col-span-1">
+                                            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Rol</label>
                                             <div className="relative">
                                                 <select
-                                                    className="w-full px-5 py-3.5 rounded-2xl border border-gray-100 bg-gray-50 focus:bg-white focus:ring-4 focus:ring-primary/10 focus:border-primary outline-none transition-all appearance-none shadow-sm cursor-pointer"
+                                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-primary focus:bg-white focus:ring-0 transition-all font-medium text-secondary appearance-none cursor-pointer"
                                                     value={formData.role}
                                                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                                                 >
                                                     <option value="pasajero">Pasajero 🐾</option>
                                                     <option value="conductor">Conductor 🚖</option>
+                                                    <option value="otro">Otro</option>
                                                 </select>
-                                                <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                                                    <Loader2 size={16} className="hidden" /> {/* Placeholder for arrow if needed */}
+                                                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                                                    <Loader2 size={16} className="hidden" />
                                                 </div>
                                             </div>
-                                        </motion.div>
+                                        </div>
+                                    </div>
 
-                                        <motion.button
-                                            variants={itemVariants}
-                                            type="submit"
-                                            disabled={status === 'loading'}
-                                            whileHover={{ scale: 1.02, backgroundColor: '#f7a800' }}
-                                            whileTap={{ scale: 0.98 }}
-                                            className="w-full bg-secondary text-white py-4.5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-opacity-90 transition-all shadow-xl active:shadow-inner disabled:opacity-70 h-14"
-                                        >
-                                            {status === 'loading' ? (
-                                                <motion.div
-                                                    animate={{ opacity: [1, 0.5, 1] }}
-                                                    transition={{ duration: 1, repeat: Infinity }}
-                                                    className="flex items-center gap-3"
-                                                >
-                                                    <Loader2 className="animate-spin" size={20} />
-                                                    Procesando...
-                                                </motion.div>
-                                            ) : (
-                                                <>
-                                                    <Send size={20} />
-                                                    ¡Registrarme Ahora!
-                                                </>
-                                            )}
-                                        </motion.button>
+                                    <div>
+                                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Correo Electrónico</label>
+                                        <input
+                                            type="email"
+                                            required
+                                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-primary focus:bg-white focus:ring-0 transition-all font-medium text-secondary"
+                                            placeholder="tucorreo@ejemplo.com"
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                        />
+                                    </div>
 
-                                        {status === 'error' && (
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                className="flex items-center gap-2 text-red-500 text-sm font-semibold justify-center bg-red-50 py-2 rounded-lg"
-                                            >
-                                                <AlertCircle size={16} />
-                                                Ocurrió un error. Inténtalo de nuevo.
-                                            </motion.div>
+                                    <div>
+                                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Mensaje</label>
+                                        <textarea
+                                            required
+                                            rows="4"
+                                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border-transparent focus:border-primary focus:bg-white focus:ring-0 transition-all font-medium text-secondary resize-none"
+                                            placeholder="Cuéntanos en qué podemos ayudarte..."
+                                            value={formData.message}
+                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                        />
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        disabled={status === 'loading'}
+                                        className="w-full bg-secondary text-white py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all shadow-lg active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2"
+                                    >
+                                        {status === 'loading' ? (
+                                            <>
+                                                <Loader2 className="animate-spin" size={20} />
+                                                Enviando...
+                                            </>
+                                        ) : (
+                                            <>
+                                                Enviar Mensaje <Send size={18} />
+                                            </>
                                         )}
+                                    </button>
 
-                                    </form>
-                                </motion.div>
+                                    {status === 'error' && (
+                                        <p className="text-red-500 text-sm text-center font-medium mt-2 flex items-center justify-center gap-1">
+                                            <AlertCircle size={14} /> Hubo un error. Intenta nuevamente.
+                                        </p>
+                                    )}
+                                </form>
                             )}
                         </AnimatePresence>
-                    </div>
-                </motion.div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
